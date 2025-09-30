@@ -16,10 +16,15 @@
         <a href = "https://github.com/keil4ni" target = "_blank">GitHub</a>
     </nav>
 
-    <form>
-        action = "mailto:knli@ucsd.edu"
-        method = "POST"
-        enctype = "text/plain"
+    <form action = "mailto:knli@ucsd.edu" method = "POST" enctype = "text/plain">
+        <input type = "email" name = "email">
+        <label for = "email">Email</label>
+        <br>
+        <input name = "subject">
+        <label for = "subject">Subject</label>
+        <br>
+        <textarea name = "body"></textarea>
+        <label for = "body">Body</label>
     </form>
 </body>
 </html>
