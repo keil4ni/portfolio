@@ -29,7 +29,7 @@ nav a {
 nav a.current {
     border-bottom: 4px;
     border-bottom-width: 0.4em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.2em;
     color: oklch(65% 0.15 300);
 }
 
