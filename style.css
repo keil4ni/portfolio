@@ -30,5 +30,21 @@ nav a {
 nav a.current {
     border-bottom-width: 0.4em;
     padding-bottom: 0.5em;
+    color: oklch(78% 0.017 297);
 }
 
+nav a:hover {
+    border-bottom-color: var(--color-accent);
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+input, textarea, button {
+    font: inherit;
+}
+
+form {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-block: 2rem;
+}
