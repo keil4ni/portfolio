@@ -22,3 +22,7 @@ nav a {
     margin-bottom: auto;
 }
 
+html {
+    --color-accent: oklch(66.688% 0.15479 302.364);
+    accent-color: var(--color-accent);
+}
