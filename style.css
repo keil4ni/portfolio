@@ -10,14 +10,13 @@ nav {
     margin-bottom: 2rem;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: oklch(80% 3% 200);
+    border-bottom-color: oklch(78% 0.017 297);
     
 }
 
-nav a.current {
-    border-bottom-width: 0.4em;
-    border-bottom-color: var(--color-accent);
-    padding-bottom: 0.5em;
+html {
+    --color-accent: oklch(65% 0.15 300);
+    accent-color: var(--color-accent);
 }
 
 nav a {
@@ -28,7 +27,8 @@ nav a {
     padding: 0.5em;
 }
 
-html {
-    --color-accent: oklch(66.688% 0.15479 302.364);
-    accent-color: var(--color-accent);
+nav a.current {
+    border-bottom-width: 0.4em;
+    padding-bottom: 0.5em;
 }
+
