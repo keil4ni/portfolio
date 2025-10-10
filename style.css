@@ -92,6 +92,10 @@ section h3 {
     justify-content: space-between;
 }
 
+section h3 i {
+    color: oklch(60% 0 0);
+}
+
 section a {
     color: black;
     text-decoration: none;
