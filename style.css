@@ -99,6 +99,12 @@ section p {
 
 section a {
     color: black;
+    text-decoration: none;
+}
+
+section a:hover {
+    color: oklch(75% 0.15 300);
+    text-decoration: underline;
 }
 
 section ul {
