@@ -92,11 +92,6 @@ section h3 {
     justify-content: space-between;
 }
 
-section p {
-    margin: 0;
-    padding: 0;
-}
-
 section a {
     color: black;
     text-decoration: none;
