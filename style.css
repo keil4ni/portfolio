@@ -85,9 +85,6 @@ section h2 {
 }
 
 section h3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 6px 0;
 }
 
