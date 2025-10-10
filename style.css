@@ -5,10 +5,6 @@ body {
     padding: 1em;
 }
 
-.spacer {
-    margin: 0px auto;
-}
-
 nav {
     display: flex;
     margin-bottom: 2rem;
@@ -80,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 
-.resume h2 {
+section h2 {
     margin: 10px 0px;
     border-bottom: 1px solid #000000;
     text-transform: uppercase;
@@ -88,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
-.resume h3 {
+section h3 {
     margin: 6px 0px;
     display: flex;
     font-size: 15px;
@@ -96,16 +92,16 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
 }
 
-.resume p {
+section p {
     margin: 0;
     padding: 0;
 }
 
-.resume a {
+section a {
     color: black;
 }
 
-.resume ul {
+section ul {
     margin: 4px 0;
     padding-left: 24px;
     padding-right: 24px;
