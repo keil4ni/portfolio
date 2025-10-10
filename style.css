@@ -103,7 +103,7 @@ section a {
 }
 
 section a:hover {
-    color: oklch(75% 0.15 300);
+    color: oklch(65% 0.15 300);
     text-decoration: underline;
 }
 
