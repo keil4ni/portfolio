@@ -96,15 +96,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
 }
 
-.resume h1 {
-    color: black;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-}
-
 .resume p {
     margin: 0;
     padding: 0;
