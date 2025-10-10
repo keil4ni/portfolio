@@ -92,6 +92,16 @@ section h3 {
     justify-content: space-between;
 }
 
+section h3 a {
+  color: oklch(65% 0.15 300);
+  text-decoration: none;
+}
+
+section h3 a:hover {
+  color: oklch(75% 0.15 300);
+  text-decoration: underline;
+}
+
 section ul {
     margin: 4px 0;
     padding-left: 24px;
