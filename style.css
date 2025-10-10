@@ -75,3 +75,22 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-wrap: balance;
 }
+
+section {
+    padding: 2rem;
+}
+
+.resume p {
+    margin: 0;
+    padding: 0;
+}
+
+.resume a {
+    color: black;
+}
+
+.resume ul {
+    margin: 4px 0;
+    padding-left: 24px;
+    padding-right: 24px;
+}
