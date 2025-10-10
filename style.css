@@ -86,6 +86,10 @@ section h2 {
 
 section h3 {
     margin: 6px 0;
+    display: flex;
+    font-size: 15px;
+    padding: 0;
+    justify-content: space-between;
 }
 
 section p {
