@@ -5,6 +5,10 @@ body {
     padding: 1em;
 }
 
+.spacer {
+    margin: 0px auto;
+}
+
 nav {
     display: flex;
     margin-bottom: 2rem;
@@ -76,21 +80,6 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 
-.resume p {
-    margin: 0;
-    padding: 0;
-}
-
-.resume a {
-    color: black;
-}
-
-.resume ul {
-    margin: 4px 0;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
 .resume h2 {
     margin: 10px 0px;
     border-bottom: 1px solid #000000;
@@ -107,6 +96,17 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
 }
 
-.spacer {
-    margin: 0px auto;
+.resume p {
+    margin: 0;
+    padding: 0;
+}
+
+.resume a {
+    color: black;
+}
+
+.resume ul {
+    margin: 4px 0;
+    padding-left: 24px;
+    padding-right: 24px;
 }
