@@ -93,12 +93,11 @@ section h3 {
 }
 
 section h3 a {
-  color: oklch(65% 0.15 300);
   text-decoration: none;
 }
 
 section h3 a:hover {
-  color: oklch(75% 0.15 300);
+  color: oklch(65% 0.15 300);
   text-decoration: underline;
 }
 
