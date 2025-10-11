@@ -31,7 +31,7 @@ nav a.current {
     border-bottom-color: var(--color-accent);
     border-bottom-width: 0.4em;
     padding-bottom: 0.2em;
-    color: oklch(65% 0.15 300);
+    background-color: oklch(65% 0.15 300);
 }
 
 nav a:hover {
