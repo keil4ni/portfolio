@@ -15,8 +15,8 @@ function $$(selector, context = document) {
 
 //step 3
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/"                  // Local server
-  : "/website/";         // GitHub Pages repo name
+  ? "/"                  // local server
+  : "/portfolio/";       // gh pages repo name
 
 let pages = [
     { url: '', title: 'Home' },
@@ -38,8 +38,10 @@ for (let p of pages) {
     
     let title = p.title;
 
+    //before
     // nav.insertAdjacentHTML('beforeend', `<a href = "${url}">${title}</a>`);
     
+    //after
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
