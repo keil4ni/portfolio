@@ -30,17 +30,20 @@ let nav = document.createElement('nav');
 document.body.prepend(nav);
 
 for (let p of pages) {
-    // let url = p.url;
+    let url = p.url;
     if (!url.startsWith('http')) {
         url = BASE_PATH + url;
     }
     // alternative: url = !url.startsWith('http') ? BASE_PATH + url : url;
     
-    // let title = p.title;
+    let title = p.title;
 
     // nav.insertAdjacentHTML('beforeend', `<a href = "${url}">${title}</a>`);
     
-
+    let a = document.createElement('a');
+    a.href = url;
+    a.textContent = title;
+    nav.append(a);
 }
 
 
