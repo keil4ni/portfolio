@@ -58,10 +58,13 @@ for (let p of pages) {
     document.body.insertAdjacentHTML(
         'afterbegin',
         `
-            <label class="color-scheme">
+            <label class = "color-scheme">
                 Theme:
                 <select>
                     <!-- TODO add <option> elements here -->
+                    <option>Automatic</option>
+                    <option>Light</option>
+                    <option>Dark</option>
                 </select>
             </label>`,
         );
