@@ -63,11 +63,10 @@ for (let p of pages) {
                 Theme:
                 <select>
                     <!-- TODO add <option> elements here -->
-                    <option>Automatic</option>
-                    <option>Light</option>
-                    <option>Dark</option>
+                    <option value = "light dark">Automatic</option>
+                    <option value = "light">Light</option>
+                    <option value = "dark">Dark</option>
                 </select>
             </label>`,
         );
 
-        
