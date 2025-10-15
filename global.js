@@ -54,5 +54,16 @@ for (let p of pages) {
         a.target = '_blank';
     }
 
+    // step 4 dark mode
+    document.body.insertAdjacentHTML(
+        'afterbegin',
+        `
+            <label class="color-scheme">
+                Theme:
+                <select>
+                    <!-- TODO add <option> elements here -->
+                </select>
+            </label>`,
+        );
 }
 
