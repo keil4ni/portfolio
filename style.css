@@ -16,6 +16,7 @@ nav {
 html {
     --color-accent: oklch(65% 0.15 300);
     accent-color: var(--color-accent);
+    color-scheme: light dark;
 }
 
 nav a {
