@@ -53,8 +53,9 @@ for (let p of pages) {
     if (a.host !== location.host) {
         a.target = '_blank';
     }
+}
 
-    // step 4 dark mode
+// step 4 dark mode
     document.body.insertAdjacentHTML(
         'afterbegin',
         `
@@ -68,5 +69,5 @@ for (let p of pages) {
                 </select>
             </label>`,
         );
-}
 
+        
