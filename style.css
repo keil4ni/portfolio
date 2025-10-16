@@ -111,6 +111,11 @@ section h3 a:hover {
   text-decoration: underline;
 }
 
+section p {
+    margin: 0;
+    padding: 0;
+}
+
 section ul {
     margin: 4px 0;
     padding-left: 24px;
