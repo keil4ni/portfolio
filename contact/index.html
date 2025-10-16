@@ -46,7 +46,7 @@
 
             for (let [name, value] of data) {
                 // build url params
-                params.push(`${name} = ${encodeURIComponent(value)}`);
+                params.push(`${name}=${encodeURIComponent(value)}`);
             }
             const query = params.join("&");
             const url = `${form.action}?${query}`;
