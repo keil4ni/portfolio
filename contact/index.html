@@ -18,7 +18,7 @@
 
     <h1>Contact</h1>
 
-    <form action = "mailto:knli@ucsd.edu" method = "GET" enctype = "text/plain">
+    <form action = "mailto:knli@ucsd.edu">
         
         <!-- <label for = "email">Email:
             <input type = "email" name = "email">
@@ -28,11 +28,32 @@
             <input name = "subject">
         </label>
 
-        <label for = "body">Body:
+        <label for = "body">Message:
             <textarea name = "body"></textarea>
         </label>
 
         <button>Submit</button>
     </form>
+
+    <script>
+        const form = document.querySelector('form');
+
+        // optional chaining to avoid errors
+        form?.addEventListener('submit', function(event) {
+            event.preventDefault(); // prevent mail client from opening
+            const data = new FormData(form);
+            const params = [];
+
+            for (let [name, value] of data) {
+                // build url params
+                params.push(`${name} = ${encodeURIComponent(value)}`);
+            }
+            const query = params.join("&");
+            const url = `${form.action}?${query}`;
+
+            location.href = url;
+        });
+    </script>
+
 </body>
 </html>

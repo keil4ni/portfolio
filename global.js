@@ -88,5 +88,3 @@ select.addEventListener('input', function (event) {
     localStorage.colorScheme = scheme;
     console.log('color scheme changed to:', scheme);
 });
-
-
