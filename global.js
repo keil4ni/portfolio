@@ -88,3 +88,17 @@ select.addEventListener('input', function (event) {
     localStorage.colorScheme = scheme;
     console.log('color scheme changed to:', scheme);
 });
+
+// lab 5: import project data from proj pg
+export async function fetchJSON(url) {
+  try {
+    // fetch JSON file from given URL
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
