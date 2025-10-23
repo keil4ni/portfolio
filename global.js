@@ -115,13 +115,24 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = '';
 
     for (let proj of project) {
+
+        // safety net if something is empty/null
+        const title = proj.title || "Untitled Project";
+        const desc = proj.description || "No description.";
+        const image = proj.image || "https://vis-society.github.io/labs/2/images/empty.svg";
+        const validHeading = headingLevel.match(/^h[1-6]$/) ? headingLevel : 'h2';
         
         const article = document.createElement('article');
         article.innerHTML = `
-            <h3>${proj.title}</h3>
-            <img src = "${proj.image}" alt = "${proj.title}">
-            <p>${proj.description}</p>
+            <${validHeading}>${title}</${validHeading}>
+            <img src = "${image}" alt = "${title}">
+            <p>${desc}</p>
         `;
+        // article.innerHTML = `
+        //     <h3>${proj.title}</h3>
+        //     <img src = "${proj.image}" alt = "${proj.title}">
+        //     <p>${proj.description}</p>
+        // `;
 
         containerElement.appendChild(article);
 
