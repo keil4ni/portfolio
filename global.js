@@ -89,7 +89,7 @@ select.addEventListener('input', function (event) {
     console.log('color scheme changed to:', scheme);
 });
 
-// lab 5: import project data from proj pg
+// lab 4: import project data from proj pg
 export async function fetchJSON(url) {
   try {
     // fetch JSON file from given URL
@@ -118,7 +118,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h3') {
 
         // safety net if something is empty/null
         const title = proj.title || "Untitled Project";
-        const desc = proj.description || "No description.";
+        const desc = proj.description || "No description provided.";
         const image = proj.image || "https://vis-society.github.io/labs/2/images/empty.svg";
         const validHeading = headingLevel.match(/^h[1-6]$/) ? headingLevel : 'h3';
         

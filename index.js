@@ -13,7 +13,7 @@ const profileStats = document.querySelector('#profile-stats');
 
 if (profileStats) {
     profileStats.innerHTML = `
-        <h2>GitHub Stats</h2>
+        <h2>My GitHub Stats</h2>
         <dl>
             <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
             <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
