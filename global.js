@@ -123,3 +123,26 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
 
     containerElement.appendChild(article);
 }
+
+// step 3.1
+export async function fetchGithubData(username) {
+    // return statement here
+    return fetchJSON(`https://api.github.com/users/${username}`);
+}
+
+// step 3
+const githubData = await fetchGithubData('keil4ni');
+
+// step 4
+const profileStats = document.querySelector('#profile-stats');
+
+if (profileStats) {
+    profileStats.innerHTML = `
+        <dl>
+            <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
+            <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
+            <dt>Followers:</dt><dd>${githubData.followers}</dd>
+            <dt>Following:</dt><dd>${githubData.following}</dd>
+        </dl>
+    `;
+}
