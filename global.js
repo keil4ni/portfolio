@@ -110,7 +110,7 @@ export async function fetchJSON(url) {
 // making sure it works
 // console.log(response);
 
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
+export function renderProjects(project, containerElement, headingLevel = 'h3') {
     // code goes here
     containerElement.innerHTML = '';
 
@@ -120,7 +120,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         const title = proj.title || "Untitled Project";
         const desc = proj.description || "No description.";
         const image = proj.image || "https://vis-society.github.io/labs/2/images/empty.svg";
-        const validHeading = headingLevel.match(/^h[1-6]$/) ? headingLevel : 'h2';
+        const validHeading = headingLevel.match(/^h[1-6]$/) ? headingLevel : 'h3';
         
         const article = document.createElement('article');
         article.innerHTML = `
