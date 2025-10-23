@@ -108,43 +108,28 @@ export async function fetchJSON(url) {
 }
 
 // making sure it works
-console.log(response);
+// console.log(response);
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
     // code goes here
     containerElement.innerHTML = '';
 
-    const article = document.createElement('article');
+    for (let proj of project) {
 
-    article.innerHTML = `
-        <h3>${project.title}</h3>
-        <img src = "${project.image}" alt = "${project.title}">
-        <p>${project.description}</p>
-    `;
+        const article = document.createElement('article');
+        article.innerHTML = `
+            <h3>${project.title}</h3>
+            <img src = "${project.image}" alt = "${project.title}">
+            <p>${project.description}</p>
+        `;
 
-    containerElement.appendChild(article);
+        containerElement.appendChild(article);
+
+    }
 }
 
 // step 3.1
 export async function fetchGithubData(username) {
     // return statement here
     return fetchJSON(`https://api.github.com/users/${username}`);
-}
-
-// step 3
-const githubData = await fetchGithubData('keil4ni');
-
-// step 4
-const profileStats = document.querySelector('#profile-stats');
-
-// step 5
-if (profileStats) {
-    profileStats.innerHTML = `
-        <dl>
-            <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
-            <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
-            <dt>Followers:</dt><dd>${githubData.followers}</dd>
-            <dt>Following:</dt><dd>${githubData.following}</dd>
-        </dl>
-    `;
 }
