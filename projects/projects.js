@@ -7,7 +7,7 @@ async function loadProj() {
         title.textContent = `Projects (${projects.length})`;
     }
     const projectsContainer = document.querySelector('.projects');
-    renderProjects(projects, projectsContainer, 'h3');
+    renderProjects(projects, projectsContainer, 'h2');
 }
 
 loadProj();
