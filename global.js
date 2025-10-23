@@ -99,8 +99,6 @@ export async function fetchJSON(url) {
         throw new Error(`Failed to fetch projects: ${response.statusText}`);
     }
 
-    // console.log(response);
-
     const data = await response.json();
     return data;
 
@@ -108,6 +106,9 @@ export async function fetchJSON(url) {
     console.error('Error fetching or parsing JSON data:', error);
   }
 }
+
+// making sure it works
+console.log(response);
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
     // code goes here
@@ -136,6 +137,7 @@ const githubData = await fetchGithubData('keil4ni');
 // step 4
 const profileStats = document.querySelector('#profile-stats');
 
+// step 5
 if (profileStats) {
     profileStats.innerHTML = `
         <dl>
