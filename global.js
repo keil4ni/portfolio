@@ -115,7 +115,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = '';
 
     for (let proj of project) {
-
+        
         const article = document.createElement('article');
         article.innerHTML = `
             <h3>${proj.title}</h3>
