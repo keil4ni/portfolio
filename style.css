@@ -146,3 +146,10 @@ section ul {
 #profile-stats dd {
     grid-row: 2;
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
