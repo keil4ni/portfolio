@@ -11,18 +11,34 @@ async function loadProj() {
     renderProjects(projects, projectsContainer, 'h2');
 }
 
+// lab 5
 let arcGen = d3.arc().innerRadius(0).outerRadius(50);
-let arc = arcGen({
-    startAngle: 0,
-    endAngle: 2 * Math.PI,
+
+// let data = [
+//     { value: 1, label: 'apples'},
+//     { value: 2, label: 'oranges'},
+//     { value: 3, label: 'mangos'},
+//     { value: 4, label: 'pears'},
+//     { value: 5, label: 'limes'},
+//     { value: 5, label: 'cherries'},
+// ];
+
+let data = [1, 2, 3, 4, 5, 5];
+
+let sliceGenerator = d3.pie();
+
+let arcData = sliceGenerator(data);
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
+arcData.forEach((d, idx) => {
+  d3.select('svg')
+    .append('path')
+    .attr('d', arcGen(d))
+    .attr('fill', colors(idx));
 });
 
-d3.select('svg').append('path').attr('d', arc).attr('fill', 'red');
 
-// this is also valid:
-// let arc = d3.arc().innerRadius(0).outerRadius(50)({
-//   startAngle: 0,
-//   endAngle: 2 * Math.PI,
-// });
+
+
 
 loadProj();
