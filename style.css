@@ -150,6 +150,38 @@ section ul {
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
-
   overflow: visible;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin: 1em auto;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  list-style: none;
+  padding: 1em;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  gap: 0.5em;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.legend li .swatch {
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 50%;
+  display: inline-block;
 }
