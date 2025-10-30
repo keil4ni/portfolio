@@ -120,7 +120,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h3') {
         const title = proj.title || "Untitled Project";
         const desc = proj.description || "No description provided.";
         const image = proj.image || "https://vis-society.github.io/labs/2/images/empty.svg";
-        const year = proj.year || "N/A";
+        const year = proj.year || "20XX";
         const validHeading = headingLevel.match(/^h[1-6]$/) ? headingLevel : 'h3';
         
         const article = document.createElement('article');
