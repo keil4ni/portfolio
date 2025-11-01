@@ -149,7 +149,7 @@ section ul {
 }
 
 /* pie chart */
-#projects-pie-plot {
+#projects-plot {
     max-width: 20em;
     margin-block: 2em;
     overflow: visible;
@@ -179,6 +179,7 @@ section ul {
   display: flex;
   align-items: center;
   gap: 0.35em;
+  cursor: pointer;
 }
 
 .legend li .swatch {
