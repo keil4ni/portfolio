@@ -134,6 +134,7 @@ section ul {
     right: 1rem;
 }
 
+/* github stats */
 #profile-stats dl {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -147,10 +148,11 @@ section ul {
     grid-row: 2;
 }
 
+/* pie chart */
 #projects-pie-plot {
-  max-width: 20em;
-  margin-block: 2em;
-  overflow: visible;
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
 }
 
 .container {
@@ -160,6 +162,7 @@ section ul {
     margin: 1em auto;
 }
 
+/* legend */
 .legend {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
