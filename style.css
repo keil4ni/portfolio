@@ -254,6 +254,7 @@ circle:hover {
     top: 1em;
     left: 1em;
 
+    color: #111;
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.5em;
@@ -271,3 +272,20 @@ circle:hover {
   opacity: 1;
 }
 
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
