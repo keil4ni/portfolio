@@ -218,3 +218,61 @@ path {
 .gridlines path {
     stroke-width: 0;
 }
+
+dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  color: #666;
+  font-weight: 500;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+  stroke: #333;
+  stroke-width: 1px;
+}
+
+.tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+    padding: 0.75em 1em;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+    z-index: 10;
+}
+
+.tooltip.visible {
+  opacity: 1;
+}
+
