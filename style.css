@@ -208,3 +208,13 @@ path {
     fill: var(--color);
   }
 }
+
+.gridlines line {
+    stroke: #ccc;
+    stroke-opacity: 0.4;
+    shape-rendering: crispEdges;
+}
+
+.gridlines path {
+    stroke-width: 0;
+}
