@@ -132,6 +132,7 @@ function renderScatterPlot(data, commits) {
       .on('mouseenter', (event, commit) => {
         renderTooltipContent(commit);
         updateTooltipVisibility(true);
+        updateTooltipPosition(event);
       })
       .on('mouseleave', () => {
         // hide tooltip
@@ -208,7 +209,17 @@ function renderTooltipContent(commit) {
 
 function updateTooltipVisibility(isVisible) {
   const tooltip = document.getElementById('commit-tooltip');
-  tooltip.hidden = !isVisible;
+  if (isVisible) {
+    tooltip.classList.add('visible');
+  } else {
+    tooltip.classList.remove('visible');
+  }
+}
+
+function updateTooltipPosition(event) {
+  const tooltip = document.getElementById('commit-tooltip');
+  tooltip.style.left = `${event.clientX}px`;
+  tooltip.style.top = `${event.clientY}px`;
 }
 
 let data = await loadData();
