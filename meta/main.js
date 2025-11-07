@@ -207,54 +207,54 @@ function renderScatterPlot(data, commits) {
     }
 
     function renderSelectionCount(selection) {
-  const selectedCommits = selection
-    ? commits.filter((d) => isCommitSelected(selection, d))
-    : [];
+        const selectedCommits = selection
+            ? commits.filter((d) => isCommitSelected(selection, d))
+            : [];
 
-  const countElement = document.getElementById('selection-count');
-  countElement.textContent = `${
-    selectedCommits.length || 'No'
-  } commits selected`;
+        const countElement = document.getElementById('selection-count');
+        countElement.textContent = `${
+            selectedCommits.length || 'No'
+        } commits selected`;
 
-  return selectedCommits;
-}
+        return selectedCommits;
+    }
 
     function renderLanguageBreakdown(selection) {
-    const selected = selection
-        ? allCommits.filter((d) => isCommitSelected(selection, d))
-        : [];
+        const selected = selection
+            ? allCommits.filter((d) => isCommitSelected(selection, d))
+            : [];
 
-    const container = document.getElementById('language-breakdown');
-    if (!selected.length) {
+        const container = document.getElementById('language-breakdown');
+        if (!selected.length) {
+            container.innerHTML = '';
+            return;
+        }
+
+        const lines = selected.flatMap((d) => d.lines);
+
+        const breakdown = d3.rollup(
+            lines,
+            (v) => v.length,
+            (d) => d.type
+        );
+
         container.innerHTML = '';
-        return;
-    }
-
-    const lines = selected.flatMap((d) => d.lines);
-
-    const breakdown = d3.rollup(
-        lines,
-        (v) => v.length,
-        (d) => d.type
-    );
-
-    container.innerHTML = '';
-    for (const [language, count] of breakdown) {
-        const proportion = count / lines.length;
-        container.innerHTML += `
-        <dt>${language}</dt>
-        <dd>${count} lines (${d3.format('.1~%')(proportion)})</dd>
-        `;
-    }
+        for (const [language, count] of breakdown) {
+            const proportion = count / lines.length;
+            container.innerHTML += `
+            <dt>${language}</dt>
+            <dd>${count} lines (${d3.format('.1~%')(proportion)})</dd>
+            `;
+        }
     }
 
     function brushed(event) {
-    const selection = event.selection;
-    d3.selectAll('circle').classed('selected', (d) =>
-        isCommitSelected(selection, d),
-    );
-    renderSelectionCount(selection);
-    renderLanguageBreakdown(selection);
+        const selection = event.selection;
+        d3.selectAll('circle').classed('selected', (d) =>
+            isCommitSelected(selection, d),
+        );
+        renderSelectionCount(selection);
+        renderLanguageBreakdown(selection);
     }
 
     // add brush group
@@ -267,6 +267,8 @@ function renderScatterPlot(data, commits) {
       .call(brush);
 
     svg.selectAll('.dots').raise();
+
+    
 }
 
 function renderTooltipContent(commit) {
