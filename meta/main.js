@@ -32,32 +32,24 @@ function processCommits(data) {
         hourFrac: datetime.getHours() + datetime.getMinutes() / 60,
         // how many lines were modified
         totalLines: lines.length,
+        lines: lines
       };
-
-      Object.defineProperty(ret, 'lines', {
-        value: lines,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      });
-
-      return ret;
     });
 }
 
 function renderCommitInfo(data, commits) {
-  // Create the dl element
+  // create dl element
   const dl = d3.select('#stats').append('dl').attr('class', 'stats');
 
-  // Add total LOC
+  // add total LOC
   dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
   dl.append('dd').text(data.length);
 
-  // Add total commits
+  // add total commits
   dl.append('dt').text('Total commits');
   dl.append('dd').text(commits.length);
 
-  // Add most active time of day
+  // add most active time of day
   const timeOfDayCt = d3.rollup(
     commits,
     v => v.length,
@@ -67,6 +59,7 @@ function renderCommitInfo(data, commits) {
   const mostActiveTime = Array.from(timeOfDayCt.entries())
     .sort((a, b) => b[1] - a[1])[0][0];
 
+  // add most active day
   const dayCt = d3.rollup(
     commits,
     v => v.length,
@@ -85,7 +78,7 @@ function renderCommitInfo(data, commits) {
   dl.append('dt').text('Most active day');
   dl.append('dd').text(mostActiveDay);
 
-  // Helper function
+  // helper func
  function getTimeOfDay(hour) {
     if (hour >= 5 && hour < 12) return 'Morning';
     if (hour >= 12 && hour < 17) return 'Afternoon';
@@ -93,7 +86,7 @@ function renderCommitInfo(data, commits) {
     return 'Night';
  }
 
-  // Add total number of files in codebase
+  // add total num of files
    const uniqueFiles = new Set(data.map(d => d.file));
    const numFiles = uniqueFiles.size;
    dl.append('dt').text('Total files');
@@ -121,7 +114,6 @@ function renderScatterPlot(data, commits) {
     
     const dots = svg.append('g').attr('class', 'dots');
     
-    // step 4: communicate lines edited thru dot size
     const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
     const rScale = d3
       .scaleSqrt()
@@ -150,7 +142,6 @@ function renderScatterPlot(data, commits) {
         updateTooltipVisibility(false);
       });
 
-    // step 2.2
     const margin = { top: 10, right: 10, bottom: 30, left: 20 };
 
     const usableArea = {
@@ -166,13 +157,13 @@ function renderScatterPlot(data, commits) {
     xScale.range([usableArea.left, usableArea.right]);
     yScale.range([usableArea.bottom, usableArea.top]);
 
-    // Add gridlines BEFORE the axes
+    // add gridlines before axes
     const gridlines = svg
       .append('g')
       .attr('class', 'gridlines')
       .attr('transform', `translate(${usableArea.left}, 0)`);
 
-    // Create gridlines as an axis with no labels and full-width ticks
+    // create gridlines as axis w no labels and full-width ticks
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     // Create the axes
@@ -185,13 +176,13 @@ function renderScatterPlot(data, commits) {
     // string.padStart() formats as 2 digit num
     // append ":00" to appear as timestamp
 
-    // Add X axis
+    // add x-axis
     svg
       .append('g')
       .attr('transform', `translate(0, ${usableArea.bottom})`)
       .call(xAxis);
 
-    // Add Y axis
+    // add y-axis
     svg
       .append('g')
       .attr('transform', `translate(${usableArea.left}, 0)`)
@@ -199,7 +190,7 @@ function renderScatterPlot(data, commits) {
 
     function isCommitSelected(selection, commit) {
     if (!selection) return false;
-    // TODO: return true if commit is within brushSelection and false if not
+    // return true if commit is within brushSelection & false if not
     const [[x0, y0], [x1, y1]] = selection;
     const cx = xScale(commit.date);
     const cy = yScale(commit.hourFrac);
@@ -221,7 +212,7 @@ function renderScatterPlot(data, commits) {
 
     function renderLanguageBreakdown(selection) {
         const selected = selection
-            ? allCommits.filter((d) => isCommitSelected(selection, d))
+            ? commits.filter((d) => isCommitSelected(selection, d))
             : [];
 
         const container = document.getElementById('language-breakdown');
@@ -311,69 +302,10 @@ function createBrushSelector(svg) {
     svg.selectAll('circle').raise();
 }
 
-// function isCommitSelected(selection, commit) {
-//   if (!selection) return false;
-//   // TODO: return true if commit is within brushSelection and false if not
-//   const [[x0, y0], [x1, y1]] = selection;
-//   const cx = xScale(commit.date);
-//   const cy = yScale(commit.hourFrac);
-//   return x0 <= cx && cx <= x1 && y0 <= cy && cy <= y1;
-// }
-
-// function renderSelectionCount(selection) {
-//   const selectedCommits = selection
-//     ? commits.filter((d) => isCommitSelected(selection, d))
-//     : [];
-
-//   const countElement = document.getElementById('selection-count');
-//   countElement.textContent = `${
-//     selectedCommits.length || 'No'
-//   } commits selected`;
-
-//   return selectedCommits;
-// }
-
-// function renderLanguageBreakdown(selection) {
-//   const selected = selection
-//     ? allCommits.filter((d) => isCommitSelected(selection, d))
-//     : [];
-
-//   const container = document.getElementById('language-breakdown');
-//   if (!selected.length) {
-//     container.innerHTML = '';
-//     return;
-//   }
-
-//   const lines = selected.flatMap((d) => d.lines);
-
-//   const breakdown = d3.rollup(
-//     lines,
-//     (v) => v.length,
-//     (d) => d.type
-//   );
-
-//   container.innerHTML = '';
-//   for (const [language, count] of breakdown) {
-//     const proportion = count / lines.length;
-//     container.innerHTML += `
-//       <dt>${language}</dt>
-//       <dd>${count} lines (${d3.format('.1~%')(proportion)})</dd>
-//     `;
-//   }
-// }
-
-// function brushed(event) {
-//   const selection = event.selection;
-//   d3.selectAll('circle').classed('selected', (d) =>
-//     isCommitSelected(selection, d),
-//   );
-//   renderSelectionCount(selection);
-//   renderLanguageBreakdown(selection);
-// }
-
 let data = await loadData();
 let commits = processCommits(data);
 
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
+
 
