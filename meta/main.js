@@ -49,12 +49,6 @@ function renderCommitInfo(data, commits) {
   dl.append('dt').text('Total commits');
   dl.append('dd').text(commits.length);
 
-  // add total num of files
-  const uniqueFiles = new Set(data.map(d => d.file));
-  const numFiles = uniqueFiles.size;
-  dl.append('dt').text('Total files');
-  dl.append('dd').text(numFiles);
-
   // add most active time of day
   const timeOfDayCt = d3.rollup(
     commits,
@@ -64,6 +58,9 @@ function renderCommitInfo(data, commits) {
 
   const mostActiveTime = Array.from(timeOfDayCt.entries())
     .sort((a, b) => b[1] - a[1])[0][0];
+
+  dl.append('dt').text('Most active time');
+  dl.append('dd').text(mostActiveTime);
 
   // add most active day
   const dayCt = d3.rollup(
@@ -78,11 +75,15 @@ function renderCommitInfo(data, commits) {
     Array.from(dayCt.entries()).sort((a, b) => b[1] - a[1])[0][0]
   ];
 
-  dl.append('dt').text('Most active time');
-  dl.append('dd').text(mostActiveTime);
-
   dl.append('dt').text('Most active day');
   dl.append('dd').text(mostActiveDay);
+
+  // add total num of files
+  const uniqueFiles = new Set(data.map(d => d.file));
+  const numFiles = uniqueFiles.size;
+
+  dl.append('dt').text('Total files');
+  dl.append('dd').text(numFiles);
 
   // helper func
  function getTimeOfDay(hour) {
