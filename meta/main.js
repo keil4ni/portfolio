@@ -49,6 +49,12 @@ function renderCommitInfo(data, commits) {
   dl.append('dt').text('Total commits');
   dl.append('dd').text(commits.length);
 
+  // add total num of files
+  const uniqueFiles = new Set(data.map(d => d.file));
+  const numFiles = uniqueFiles.size;
+  dl.append('dt').text('Total files');
+  dl.append('dd').text(numFiles);
+
   // add most active time of day
   const timeOfDayCt = d3.rollup(
     commits,
@@ -85,12 +91,6 @@ function renderCommitInfo(data, commits) {
     if (hour >= 17 && hour < 21) return 'Evening';
     return 'Night';
  }
-
-  // add total num of files
-   const uniqueFiles = new Set(data.map(d => d.file));
-   const numFiles = uniqueFiles.size;
-   dl.append('dt').text('Total files');
-   dl.append('dd').text(numFiles);
 
 }
 

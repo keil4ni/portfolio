@@ -68,12 +68,6 @@ form button {
     gap: 2em;
 }
 
-/* .projects article {
-    grid-template-rows: subgrid;
-    grid-row: span 3;
-    gap: 1em;
-} */
-
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-wrap: balance;
@@ -142,6 +136,8 @@ section ul {
 
 #profile-stats dt {
     grid-row: 1;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 #profile-stats dd {
@@ -209,6 +205,7 @@ path {
   }
 }
 
+/* meta scatterplot */
 .gridlines line {
     stroke: #ccc;
     stroke-opacity: 0.4;
@@ -219,6 +216,7 @@ path {
     stroke-width: 0;
 }
 
+/* tooltip style */
 dl.info {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -272,6 +270,7 @@ circle:hover {
   opacity: 1;
 }
 
+/* scatterplot brush */
 @keyframes marching-ants {
   to {
     stroke-dashoffset: -8; /* 5 + 3 */
@@ -288,4 +287,22 @@ circle:hover {
 
 circle.selected {
   fill: #ff6b6b;
+}
+
+/* meta stats + language breakdown */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    text-align: left;
+}
+
+.stats dt {
+    grid-row: 1;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.stats dd {
+    grid-row: 2;
+    margin: 0;
 }
