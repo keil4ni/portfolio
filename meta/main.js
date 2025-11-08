@@ -122,6 +122,22 @@ function renderScatterPlot(data, commits) {
 
     const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
 
+    const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+
+    const usableArea = {
+        top: margin.top,
+        right: width - margin.right,
+        bottom: height - margin.bottom,
+        left: margin.left,
+        width: width - margin.left - margin.right,
+        height: height - margin.top - margin.bottom,
+    };
+
+    // update scale w new ranges
+    xScale.range([usableArea.left, usableArea.right]);
+    yScale.range([usableArea.bottom, usableArea.top]);
+
+    // draw dots after scaling axes
     dots
       .selectAll('circle')
       .data(sortedCommits)
@@ -141,21 +157,6 @@ function renderScatterPlot(data, commits) {
         d3.select(event.currentTarget).style('fill-opacity', 0.7);
         updateTooltipVisibility(false);
       });
-
-    const margin = { top: 10, right: 10, bottom: 30, left: 20 };
-
-    const usableArea = {
-        top: margin.top,
-        right: width - margin.right,
-        bottom: height - margin.bottom,
-        left: margin.left,
-        width: width - margin.left - margin.right,
-        height: height - margin.top - margin.bottom,
-    };
-
-    // update scale w new ranges
-    xScale.range([usableArea.left, usableArea.right]);
-    yScale.range([usableArea.bottom, usableArea.top]);
 
     // add gridlines before axes
     const gridlines = svg
