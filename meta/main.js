@@ -181,13 +181,22 @@ function renderScatterPlot(data, commits) {
     svg
       .append('g')
       .attr('transform', `translate(0, ${usableArea.bottom})`)
-      .call(xAxis);
+      .call(xAxis)
+      .selectAll('text')
+      .style('font-size', '14px')
+      .attr('dy', '1.2em')
+      .attr('dx', '-0.2em')
+      .attr('text-anchor', 'end')
+      .attr('transform', 'rotate(-25)');
 
     // add y-axis
     svg
       .append('g')
       .attr('transform', `translate(${usableArea.left}, 0)`)
-      .call(yAxis);
+      .call(yAxis)
+      .selectAll('text')
+      .style('font-size', '14px')
+      .attr('dx', '-0.5em');
 
     function isCommitSelected(selection, commit) {
     if (!selection) return false;
