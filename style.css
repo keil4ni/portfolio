@@ -306,3 +306,16 @@ circle.selected {
     grid-row: 2;
     margin: 0;
 }
+
+/* meta commits slider */
+
+.time-filter {
+  flex: 1;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.time-filter time {
+    margin-left: auto;
+}

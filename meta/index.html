@@ -6,10 +6,26 @@
     <title>Meta</title>
     <link rel = "stylesheet" href = "../style.css">
     <script type = "module" src = "../global.js"></script>
-    <script type = "module" src = "main.js"></script>
+    <script type = "module" src = "meta.js"></script>
 </head>
 <body>
     <h1>Meta</h1>
+
+    <div class="time-filter">
+        <label>
+            Show commits until:
+            <input 
+                id="commit-progress"
+                type="range"
+                min="0"
+                max="100"
+                value="-1"
+            >
+        </label>
+        
+        <time id="selected-time"></time>
+        <em id="any-time">(any time)</em>
+    </div>
 
     <div id="stats"></div>
 

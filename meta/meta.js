@@ -308,10 +308,10 @@ function updateTooltipPosition(event) {
   tooltip.style.top = `${event.clientY}px`;
 }
 
-function createBrushSelector(svg) {
-    svg.call(d3.brush().on('start brush end', brushed));
-    svg.selectAll('circle').raise();
-}
+// function createBrushSelector(svg) {
+//     svg.call(d3.brush().on('start brush end', brushed));
+//     svg.selectAll('circle').raise();
+// }
 
 let data = await loadData();
 let commits = processCommits(data);
@@ -319,4 +319,16 @@ let commits = processCommits(data);
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
 
+// lab 8
+
+let commitProgress = 100;
+
+let timeScale = d3
+  .scaleTime()
+  .domain([
+    d3.min(commits, (d) => d.datetime),
+    d3.max(commits, (d) => d.datetime),
+  ])
+  .range([0, 100]);
+let commitMaxTime = timeScale.invert(commitProgress);
 
