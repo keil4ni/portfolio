@@ -19,13 +19,24 @@
                 type="range"
                 min="0"
                 max="100"
-                value="-1"
+                value="100"
             >
         </label>
         
         <time id="selected-time"></time>
         <em id="any-time">(any time)</em>
     </div>
+
+    <dl id="files">
+    <!-- we want the following structure for each file:
+    <div>
+        <dt>
+        <code>{file.name}</code>
+        </dt>
+        <dd>{file.lines.length} lines</dd>
+    </div>
+    -->
+    </dl>
 
     <div id="stats"></div>
 
