@@ -31,9 +31,12 @@
     <!-- we want the following structure for each file:
     <div>
         <dt>
-        <code>{file.name}</code>
+            <code>{file.name}</code>
+            <small>{file.lines.length} lines</small>
         </dt>
-        <dd>{file.lines.length} lines</dd>
+        <dd>
+            <div class="line"></div>
+        </dd>
     </div>
     -->
     </dl>
@@ -65,6 +68,8 @@
 
     <p id="selection-count">No commits selected</p>
     <dl id="language-breakdown" class="stats"></dl>
+
+    <dl id="files"></dl>
 
 </body>
 </html>

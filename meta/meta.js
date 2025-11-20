@@ -353,7 +353,10 @@ function updateFileDisplay() {
     .groups(lines, (d) => d.file)
     .map(([name, lines]) => {
       return { name, lines };
-    });
+    })
+    .sort((a, b) => b.lines.length - a.lines.length);
+
+  let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
   let filesContainer = d3
     .select('#files')
@@ -379,7 +382,8 @@ function updateFileDisplay() {
     .selectAll('div')
     .data((d) => d.lines)
     .join('div')
-    .attr('class', 'loc');
+    .attr('class', 'loc')
+    .attr('style', (d) => `--color: ${colors(d.type)}`);
 }
 
 function onTimeSliderChange() {
@@ -409,6 +413,7 @@ function onTimeSliderChange() {
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
   updateScatterPlot(data, filteredCommits);
   updateFileDisplay(filteredCommits);
+  updateCommitStats(data, filteredCommits);
 }
 
 function updateScatterPlot(data, commits) {
@@ -468,7 +473,12 @@ function updateScatterPlot(data, commits) {
     });
 }
 
+function updateCommitStats(data, commits) {
+  d3.select('#stats').selectAll('*').remove();
 
+  // rerender stats
+  renderCommitInfo(data, commits);
+}
 
 document.getElementById('commit-progress').addEventListener('input', onTimeSliderChange);
 
