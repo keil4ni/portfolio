@@ -176,37 +176,19 @@ function renderScatterPlot(data, commits) {
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3
       .axisLeft(yScale)
-      .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
+      .tickFormat(d => d === 24 ? '24:00' : String(d).padStart(2, '0') + ':00');
+
     // d % 24 gets 0 instead of 24 for midnight
     // String(d % 24) converts num to str
     // string.padStart() formats as 2 digit num
     // append ":00" to appear as timestamp
 
-    // add x-axis
-    // svg
-    //   .append('g')
-    //   .attr('transform', `translate(0, ${usableArea.bottom})`)
-    //   .call(xAxis)
-    //   .selectAll('text')
-    //   .style('font-size', '14px')
-    //   .attr('dy', '1.2em')
-    //   .attr('dx', '-0.2em')
-    //   .attr('text-anchor', 'end')
-    //   .attr('transform', 'rotate(-25)');
     svg
       .append('g')
       .attr('transform', `translate(0, ${usableArea.bottom})`)
       .attr('class', 'x-axis') // new line to mark the g tag
       .call(xAxis);
 
-    // add y-axis
-    // svg
-    //   .append('g')
-    //   .attr('transform', `translate(${usableArea.left}, 0)`)
-    //   .call(yAxis)
-    //   .selectAll('text')
-    //   .style('font-size', '14px')
-    //   .attr('dx', '-0.5em');
     svg
       .append('g')
       .attr('transform', `translate(${usableArea.left}, 0)`)
@@ -321,11 +303,6 @@ function updateTooltipPosition(event) {
   tooltip.style.left = `${event.clientX}px`;
   tooltip.style.top = `${event.clientY}px`;
 }
-
-// function createBrushSelector(svg) {
-//     svg.call(d3.brush().on('start brush end', brushed));
-//     svg.selectAll('circle').raise();
-// }
 
 let data = await loadData();
 let commits = processCommits(data);
@@ -508,8 +485,6 @@ d3.select('#scatter-story')
   );
 
 function onStepEnter(response) {
-  // console.log(response.element.__data__.datetime);
-
   const activeCommit = response.element.__data__;
   const cutoffDate = activeCommit.datetime;
 

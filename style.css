@@ -1,7 +1,6 @@
 body {
     font: 100%/1.5 system-ui;
-    /* max-width: 100ch; */
-    max-width: none;
+    max-width: 100ch;
     margin-inline: max(1em, (100% - 100ch) / 2);
     padding: 1em;
 }
@@ -321,7 +320,7 @@ circle.selected {
 }
 
 .time-filter input[type="range"] {
-  width: 679px;
+  width: 675px;
 }
 
 .time-filter time,
@@ -377,7 +376,7 @@ circle.selected {
 #scrolly-1 {
   position: relative;
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
 
   > * {
     flex: 1;
@@ -394,4 +393,9 @@ circle.selected {
   left: 0;
   bottom: auto;
   height: 50vh;
+  flex: 2;
+
+  text {
+    font-size: 20px;
+  }
 }
