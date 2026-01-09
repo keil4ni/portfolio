@@ -1,5 +1,23 @@
 [
   {
+    "title": "Mapping Campus Safety",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "UCSD police logs are publicly accessible online, but how do we make sense of it? Are there certain spots on campus that carry higher theft risk? A project involving: data extraction, exploratory data analysis, Python, hypothesis testing, permutation testing."
+  },
+  {
+    "title": "Carbon in America: Where do we stand?",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "How has climate in America changed based on its membership status of the Paris Climate Agreement? A interactive project involving: geospatial visualization, storytelling with data, JavaScript, D3, HTML, CSS."
+  },
+  {
+    "title": "Steam Game Recommendation Predictor",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Est neque, velit nam rerum error odio voluptates voluptatem magnam laboriosam ad? Doloribus, id et itaque unde porro totam ullam quaerat blanditiis odit animi eveniet aut, voluptate velit iure odio."
+  },
+  {
     "title": "Bikewatching",
     "year": "2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -15,7 +33,7 @@
     "title": "Mental Health Clustering Analysis",
     "year": "2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "How do you detect mental health patterns in the workplace? It's not easy, but it's always important to be aware of behavioral symptoms and know when to reach out for help. A project involving: exploratory data analysis, clustering."
+    "description": "How do you detect mental health patterns in the workplace? It's not easy, but it's always important to be aware of behavioral symptoms and know when to reach out for help. A project involving: exploratory data analysis, Python, clustering."
   },
   {
     "title": "WildRydes",
@@ -33,25 +51,7 @@
     "title": "Heart Attack Data Analysis",
     "year": "2022",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "What are the chances that someone experiences a heart attack based on their symptoms? A project involving: exploratory data analysis, classification (KNN, SVM, Random Forests, Gradient Boosting)."
-  },
-  {
-    "title": "Quos sint quaerat omnis?",
-    "year": "2025",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Est neque, velit nam rerum error odio voluptates voluptatem magnam laboriosam ad? Doloribus, id et itaque unde porro totam ullam quaerat blanditiis odit animi eveniet aut, voluptate velit iure odio."
-  },
-  {
-    "title": "Ipsum, aperiam magni? Nobis.",
-    "year": "2023",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Delectus magni, vel, quod mollitia hic rem temporibus, sint doloribus tenetur qui dolores tempore quisquam fuga nobis recusandae molestiae ipsum nostrum maxime eaque dicta aperiam eum quas beatae. At, neque."
-  },
-  {
-    "title": "Dicta nihil odit illo?",
-    "year": "2022",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Vitae quos laudantium officiis rerum, accusamus delectus aspernatur quas nulla, magni sed, excepturi saepe incidunt laboriosam alias at aliquam atque quisquam autem nesciunt. Minus, reprehenderit odit nam illo natus aspernatur?"
+    "description": "What are the chances that someone experiences a heart attack based on their symptoms? A project involving: exploratory data analysis, Python, classification (KNN, SVM, Random Forests, Gradient Boosting)."
   },
   {
     "title": "Vel earum nulla facilis.",
