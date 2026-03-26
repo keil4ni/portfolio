@@ -22,3 +22,4 @@ if (profileStats) {
         </dl>
     `;
 }
+

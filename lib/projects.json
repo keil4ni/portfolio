@@ -1,5 +1,17 @@
 [
   {
+    "title": "YouTube Duration Analysis",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "How does the duration of a YouTube video determine general consumer engagement, measured by likes and views? A project involving: exploratory data analysis, Python, linear regression, hypothesis testing."
+  },
+  {
+    "title": "Valorant Champions Tour (VCT) 2024 Analysis",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "To what extent do headshot rates and agent pick rates predict team win rates across regions in the 2024 VCT playoffs, and does the strength of these predictors vary significantly between regions? A project involving: exploratory data analysis, Python, multilinear regression, PCA, hypothesis testing."
+  },
+  {
     "title": "Mapping Campus Safety",
     "year": "2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -15,7 +27,7 @@
     "title": "Steam Game Recommendation Predictor",
     "year": "2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Est neque, velit nam rerum error odio voluptates voluptatem magnam laboriosam ad? Doloribus, id et itaque unde porro totam ullam quaerat blanditiis odit animi eveniet aut, voluptate velit iure odio."
+    "description": "Can we predict whether a user will recommend a game on Steam based on their review and playtime information? A project involving: exploratory data analysis, Python, prediction, classification."
   },
   {
     "title": "Bikewatching",
@@ -52,23 +64,5 @@
     "year": "2022",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "What are the chances that someone experiences a heart attack based on their symptoms? A project involving: exploratory data analysis, Python, classification (KNN, SVM, Random Forests, Gradient Boosting)."
-  },
-  {
-    "title": "Vel earum nulla facilis.",
-    "year": "2024",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Aut voluptatem sint atque corrupti accusamus necessitatibus possimus et, itaque nulla id deleniti nemo repellendus asperiores molestias laudantium, mollitia ad dicta. Laboriosam, itaque. Quos corporis, perferendis natus officiis beatae qui."
-  },
-  {
-    "title": "Nobis iste neque quaerat.",
-    "year": "2022",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Quos, recusandae, sit rerum velit nostrum nihil quisquam tempora repellat sed quibusdam facilis. Assumenda quaerat ab, nesciunt odio facere sit, ipsa necessitatibus tempora, maiores commodi sed quae provident deserunt at?"
-  },
-  {
-    "title": "Iusto, incidunt. Totam, illum.",
-    "year": "2025",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Tempore, eveniet minus velit, earum aperiam necessitatibus repellendus provident accusamus illum officiis doloribus, eum saepe est aut numquam distinctio pariatur natus totam repellat. Numquam nulla libero sapiente magnam nostrum ex."
   }
 ]
